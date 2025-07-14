@@ -1,0 +1,41 @@
+// Simular escaneo del QR
+function simularEscaneo() {
+  alert("✅ Casillero abierto");
+  document.getElementById("lockerImg").classList.add("abierto");
+}
+
+// Finalizar pago
+function finalizarPago() {
+  alert("✅ Pago realizado. Dirígete al casillero.");
+}
+
+// Cronómetro de 60 minutos
+function iniciarCronometro() {
+  let tiempo = 60 * 60; // 60 minutos en segundos
+  const reloj = document.getElementById("cronometro");
+
+  const intervalo = setInterval(() => {
+    if (tiempo <= 0) {
+      clearInterval(intervalo);
+      reloj.textContent = "Pedido listo";
+      reproducirAlarma();
+    } else {
+      let minutos = Math.floor(tiempo / 60);
+      let segundos = tiempo % 60;
+      reloj.textContent = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
+      tiempo--;
+    }
+  }, 1000);
+}
+
+// Alarma sonora (alert simple)
+function reproducirAlarma() {
+  alert("⏰ ¡Tu pedido está listo!");
+}
+
+// Iniciar cronómetro si estamos en la pantalla correcta
+window.onload = function () {
+  if (document.getElementById("cronometro")) {
+    iniciarCronometro();
+  }
+}
