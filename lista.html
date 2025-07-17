@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Mi Lista</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f6f8fa;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .header {
+      background: #105da8;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0.7rem 1.1rem 0.7rem 0.7rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .back-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.7rem;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+    .header-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      flex: 1;
+    }
+    .container {
+      max-width: 420px;
+      margin: 1.5rem auto 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(16,93,168,0.08);
+      padding: 1.5rem 1.2rem 2rem 1.2rem;
+    }
+    .main-title {
+      color: #105da8;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      margin-top: 0;
+      text-align: center;
+    }
+    .desc {
+      color: #222;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .pedido-box {
+      background: #e6f0fa;
+      border-radius: 12px;
+      padding: 1.2rem 1rem;
+      margin: 1.2rem 0 1.5rem 0;
+      font-size: 1.1rem;
+      color: #105da8;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(16,93,168,0.08);
+      text-align: center;
+    }
+    .repetir-btn {
+      background: #e53935;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.2s;
+    }
+    .repetir-btn:hover {
+      background: #b71c1c;
+    }
+    .productos-lista {
+      margin: 2rem 0 1.5rem 0;
+    }
+    .producto-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0.7rem 0;
+    }
+    .producto-item img {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      margin-right: 0.7rem;
+    }
+    .producto-nombre {
+      flex: 1;
+      color: #222;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .producto-precio {
+      color: #105da8;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: 1rem;
+    }
+    .recomendados-title {
+      color: #105da8;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 2rem 0 1rem 0;
+      text-align: center;
+    }
+    .recomendados-lista {
+      background: #e6eaf3;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+      color: #105da8;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <button class="back-btn" onclick="window.history.back()">&#8592;</button>
+    <span class="header-title">Mi Lista</span>
+  </div>
+  <div class="container">
+    <div class="main-title">Última compra</div>
+    <div class="pedido-box">
+      Pedido #123456<br>
+      Fecha: 2024-05-01<br>
+      Total: $1.270
+      <button class="repetir-btn">Repetir compra</button>
+    </div>
+    <div class="main-title">Productos del mes</div>
+    <div class="productos-lista">
+      <div class="producto-item">
+        <img src="img/lechuga__Mesa de trabajo 1.png" alt="Lechuga" />
+        <span class="producto-nombre">Lechuga</span>
+        <span class="producto-precio">$420</span>
+      </div>
+      <div class="producto-item">
+        <img src="img/cebolla__Mesa de trabajo 1.png" alt="Cebolla" />
+        <span class="producto-nombre">Cebolla</span>
+        <span class="producto-precio">$350</span>
+      </div>
+      <div class="producto-item">
+        <img src="img/fideos_1.png" alt="Fideos" />
+        <span class="producto-nombre">Fideos</span>
+        <span class="producto-precio">$500</span>
+      </div>
+      <div class="producto-item">
+        <img src="img/coca_cola.png" alt="Coca Cola" />
+        <span class="producto-nombre">Coca Cola</span>
+        <span class="producto-precio">$600</span>
+      </div>
+      <div class="producto-item">
+        <img src="img/queso_gouda.png" alt="Queso Gouda" />
+        <span class="producto-nombre">Queso Gouda</span>
+        <span class="producto-precio">$1200</span>
+      </div>
+    </div>
+    <div class="recomendados-title">Recomendados para vos</div>
+    <div class="recomendados-lista">
+      - Crema Cocina<br>
+      - Tomate<br>
+      - Pan de molde<br>
+      - Yogur<br>
+      - Aceite de girasol
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Elegir Sucursal - La Plata</title>
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #f6f8fa;
+      color: #222;
+      font-family: 'Roboto', Arial, sans-serif;
+      width: 100vw;
+      min-height: 100vh;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      width: 100vw;
+    }
+    .logo-carrefour {
+      margin-top: 2.2rem;
+      margin-bottom: 0.7rem;
+      width: 80px;
+      height: auto;
+      display: block;
+    }
+    .logo-takeaway {
+      width: 70px;
+      height: auto;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+    .sucursal-main {
+      width: 92vw;
+      max-width: 410px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,33,87,0.10);
+      padding: 1.5rem 1rem 2rem 1rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .sucursal-main h1 {
+      font-size: 1.15rem;
+      margin-bottom: 0.7rem;
+      color: #002157;
+    }
+    .sucursal-main h2 {
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+      color: #0074d9;
+      font-weight: 500;
+    }
+    .sucursales-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      margin-top: 0.5rem;
+      align-items: stretch;
+    }
+    .sucursal-item {
+      display: flex;
+      align-items: center;
+      background: #f0f4fa;
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 2px 8px rgba(0,33,87,0.06);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: 2px solid transparent;
+    }
+    .sucursal-item:hover, .sucursal-item.selected {
+      background: #e6eaf3;
+      border-color: #0074d9;
+    }
+    .sucursal-icon {
+      font-size: 2rem;
+      color: #0074d9;
+      margin-right: 1.1rem;
+    }
+    .sucursal-info {
+      text-align: left;
+    }
+    .sucursal-nombre {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #002157;
+    }
+    .sucursal-direccion {
+      font-size: 0.97rem;
+      color: #333;
+    }
+    @media (max-width: 430px) {
+      .sucursal-main {
+        width: 96vw;
+        max-width: 98vw;
+        padding: 1.1rem 0.3rem 1.5rem 0.3rem;
+      }
+      .logo-carrefour {
+        width: 60px;
+        margin-top: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      .logo-takeaway {
+        width: 48px;
+        margin-bottom: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="img/logo_mesa de trabajo 1.png" alt="Carrefour Logo" class="logo-carrefour" />
+  <img src="img/takeaway-btn.png" alt="Take Away Logo" class="logo-takeaway" />
+  <div class="sucursal-main">
+    <h1>Ingresá la dirección de una sucursal</h1>
+    <h2>Selección de sucursal</h2>
+    <div class="sucursales-list">
+      <a href="compras.html" class="sucursal-item">
+        <span class="sucursal-icon"><i class="fa-solid fa-store"></i></span>
+        <div class="sucursal-info">
+          <div class="sucursal-nombre">Carrefour 7 y 50</div>
+          <div class="sucursal-direccion">Av. 7 N° 850, La Plata</div>
+        </div>
+      </a>
+      <a href="compras.html" class="sucursal-item">
+        <span class="sucursal-icon"><i class="fa-solid fa-store"></i></span>
+        <div class="sucursal-info">
+          <div class="sucursal-nombre">Carrefour 44</div>
+          <div class="sucursal-direccion">Av. 44 N° 1230, La Plata</div>
+        </div>
+      </a>
+      <a href="compras.html" class="sucursal-item">
+        <span class="sucursal-icon"><i class="fa-solid fa-store"></i></span>
+        <div class="sucursal-info">
+          <div class="sucursal-nombre">Carrefour 19 y 60</div>
+          <div class="sucursal-direccion">Calle 19 N° 1450, La Plata</div>
+        </div>
+      </a>
+      <a href="compras.html" class="sucursal-item">
+        <span class="sucursal-icon"><i class="fa-solid fa-store"></i></span>
+        <div class="sucursal-info">
+          <div class="sucursal-nombre">Carrefour 520</div>
+          <div class="sucursal-direccion">Av. 520 N° 2350, La Plata</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

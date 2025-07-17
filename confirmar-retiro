@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirmar Retiro</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-blue text-white">
+
+  <!-- Header -->
+  <header class="header">
+    <button onclick="window.history.back()" class="back-btn">←</button>
+    <h1>Tu pedido está listo</h1>
+  </header>
+
+  <!-- Imagen exportada del AI -->
+  <main class="container timer-container">
+    <img src="img/8-Confirmar-Retiro.png" alt="Confirmar Retiro" class="design-img" />
+
+    <h2>Está disponible en el casillero</h2>
+    <div id="cronometro" class="timer">60:00</div>
+    <p id="estadoPedido">Estado: Tu pedido está listo</p>
+    <img src="img/locker-closed.png" alt="Casillero" class="locker-img" id="lockerImg" />
+    <button onclick="simularEscaneo()">Abrir Casillero</button>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

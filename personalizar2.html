@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Preferencias alimentarias</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f6f8fa;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Roboto', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      width: 110px;
+      margin: 2.5rem auto 1.2rem auto;
+      display: block;
+    }
+    .container {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(16,93,168,0.08);
+      padding: 2.2rem 1.5rem 2.5rem 1.5rem;
+      max-width: 370px;
+      width: 92vw;
+      margin: 2.5rem auto 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main-title {
+      color: #105da8;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      margin-top: 0;
+    }
+    .subtitle {
+      color: #222;
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      margin-top: 0.2rem;
+    }
+    .prefs-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .pref-btn {
+      background: #e3f0fa;
+      color: #105da8;
+      border: none;
+      border-radius: 18px;
+      padding: 0.7rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .pref-btn.selected, .pref-btn:hover {
+      background: #b3d8f7;
+      color: #fff;
+    }
+    .main-btn {
+      background: #e53935;
+      color: #fff;
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      border-radius: 8px;
+      padding: 0.9rem 0;
+      width: 100%;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      border: none;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .main-btn:hover {
+      background: #b71c1c;
+    }
+  </style>
+</head>
+<body>
+  <img src="img/logo.png" alt="Logo" class="logo" />
+  <div class="container">
+    <div class="main-title">Preferencias alimentarias</div>
+    <div class="subtitle">Podés seleccionar más de 1</div>
+    <div class="prefs-group">
+      <button class="pref-btn">Carnívoro</button>
+      <button class="pref-btn">Sin TACC</button>
+      <button class="pref-btn">Keto</button>
+      <button class="pref-btn">Vegana</button>
+      <button class="pref-btn">Vegetariana</button>
+    </div>
+    <a href="personalizar3.html" class="main-btn">Siguiente</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Folletos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f6f8fa;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .header {
+      background: #105da8;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0.7rem 1.1rem 0.7rem 0.7rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .back-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.7rem;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+    .header-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      flex: 1;
+    }
+    .container {
+      max-width: 420px;
+      margin: 1.5rem auto 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(16,93,168,0.08);
+      padding: 1.5rem 1.2rem 2rem 1.2rem;
+      text-align: center;
+    }
+    .folleto-img {
+      width: 100%;
+      max-width: 340px;
+      margin: 1.2rem auto 1.2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(16,93,168,0.08);
+      display: block;
+    }
+    .main-title {
+      color: #105da8;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      margin-top: 0;
+      text-align: center;
+    }
+    .ofertas-title {
+      color: #e53935;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 2rem 0 1rem 0;
+      text-align: center;
+    }
+    .ofertas-lista {
+      background: #e6eaf3;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+      color: #105da8;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+    .sucursales-title {
+      color: #105da8;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 2rem 0 1rem 0;
+      text-align: center;
+    }
+    .sucursales-lista {
+      background: #fffbe6;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      font-size: 1rem;
+      color: #b71c1c;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <button class="back-btn" onclick="window.history.back()">&#8592;</button>
+    <span class="header-title">Folletos</span>
+  </div>
+  <div class="container">
+    <img src="img/folleto_a.png" alt="Folleto" class="folleto-img" />
+    <div class="main-title">Ofertas principales</div>
+    <div class="ofertas-title">Ofertas destacadas</div>
+    <div class="ofertas-lista">
+      - 2x1 en gaseosas<br>
+      - 30% off en lácteos<br>
+      - 20% off en verduras seleccionadas<br>
+      - 15% off en productos de almacén<br>
+    </div>
+    <div class="sucursales-title">Sucursales de La Plata con esta oferta</div>
+    <div class="sucursales-lista">
+      - Sucursal 1: Calle 12 y 57<br>
+      - Sucursal 2: Calle 44 y 7<br>
+      - Sucursal 3: Camino Centenario 1234
+    </div>
+  </div>
+</body>
+</html>

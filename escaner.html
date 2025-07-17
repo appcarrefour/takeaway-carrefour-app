@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escanear QR</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-blue text-white">
+
+  <!-- Header -->
+  <header class="header">
+    <button onclick="window.history.back()" class="back-btn">←</button>
+    <h1>Escanear QR</h1>
+  </header>
+
+  <!-- Imagen exportada del AI -->
+  <main class="scanner-container">
+    <img src="img/7-Escaner.png" alt="Escaner QR" class="design-img" />
+
+    <div class="scanner-box">
+      <p>Apunta la cámara al QR para abrir el casillero</p>
+      <img src="img/qr-code.png" alt="QR Code" class="qr-img" id="lockerImg" onclick="simularEscaneo()" />
+    </div>
+    <button onclick="simularEscaneo()">Escanear</button>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

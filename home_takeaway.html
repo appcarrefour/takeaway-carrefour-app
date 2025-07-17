@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Take Away - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f6f8fa;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .header {
+      background: #105da8;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 1.1rem 0.7rem 0.7rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .user-icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 0.7rem;
+    }
+    .header-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      flex: 1;
+    }
+    .nav-bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      background: #fff;
+      box-shadow: 0 -2px 12px rgba(16,93,168,0.10);
+      z-index: 100;
+      padding: 0.2rem 0;
+    }
+    .nav-bar ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .nav-bar li {
+      flex: 1;
+      text-align: center;
+    }
+    .nav-bar a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #002157;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 0.5rem 0 0.2rem 0;
+      transition: color 0.2s;
+    }
+    .nav-bar a.active, .nav-bar a:hover {
+      color: #105da8;
+    }
+    .nav-bar img {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 0.1rem;
+      display: block;
+    }
+    .carrefour-vertical {
+      width: 110px;
+      display: block;
+      margin: 1.2rem auto 1.2rem auto;
+    }
+    .banner-compras {
+      width: 100%;
+      max-width: 420px;
+      margin: 1.2rem auto 1.2rem auto;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,33,87,0.08);
+      display: block;
+    }
+    .cartel-azul {
+      background: rgba(16,93,168,0.10);
+      border-radius: 14px;
+      padding: 1.5rem 1rem 1.5rem 1rem;
+      margin: 1.5rem auto 1.5rem auto;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(16,93,168,0.06);
+    }
+    .cartel-azul img {
+      width: 70px;
+      margin-bottom: 0.7rem;
+    }
+    .cartel-azul .cartel-title {
+      color: #105da8;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .cartel-azul .cartel-contador {
+      color: #e53935;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 0.7rem;
+    }
+    .ahorro-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: #e6eaf3;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      margin: 1.5rem auto 1.5rem auto;
+      max-width: 420px;
+      justify-content: space-between;
+    }
+    .ahorro-section img {
+      width: 38px;
+      height: 38px;
+    }
+    .ahorro-section .ahorro-title {
+      color: #105da8;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .ahorro-section .ahorro-btn {
+      background: #105da8;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .ahorro-section .ahorro-btn:hover {
+      background: #003399;
+    }
+    .notificacion {
+      background: #e6f0fa;
+      border-radius: 10px;
+      color: #105da8;
+      font-weight: 600;
+      padding: 1rem 1.2rem;
+      margin: 1.5rem auto 1.5rem auto;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(16,93,168,0.06);
+    }
+    .califica-section {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(16,93,168,0.06);
+      padding: 1.2rem 1rem;
+      margin: 1.5rem auto 1.5rem auto;
+      max-width: 420px;
+      text-align: center;
+    }
+    .califica-section img {
+      width: 48px;
+      margin-bottom: 0.7rem;
+    }
+    .estrellas {
+      display: flex;
+      justify-content: center;
+      gap: 0.3rem;
+      margin-top: 0.7rem;
+    }
+    .estrella {
+      font-size: 2rem;
+      color: #e6eaf3;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .estrella.selected {
+      color: #fbc02d;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="img/icono_usuario.png" class="user-icon" alt="Usuario" />
+    <span class="header-title">Take Away</span>
+  </div>
+  <a href="home.html"><img src="img/carrefour_vertical.png" alt="Carrefour Vertical" class="carrefour-vertical" style="cursor:pointer;" /></a>
+  <img src="img/banner_compras_Mesa de trabajo 1.png" alt="Banner Compras" class="banner-compras" />
+  <div class="cartel-azul">
+    <img src="img/logo_take.png" alt="Take Away" />
+    <div class="cartel-title">EN MINUTOS<br>TU PEDIDO ESTARÁ LISTO</div>
+    <div class="cartel-contador" id="contador-takeaway">05:00</div>
+  </div>
+  <div class="ahorro-section">
+    <img src="img/icono_ahorro_Mesa de trabajo 1.png" alt="Ahorro" />
+    <span class="ahorro-title">Ver tus ahorros</span>
+    <button class="ahorro-btn" onclick="window.location.href='ahorro.html'">Ver</button>
+  </div>
+  <div class="notificacion" id="notificacion-pedido" style="display:none;">
+    <div>¡Tu pedido está listo para retirar!</div>
+    <div style="margin-top:0.5rem;">Recordá tu código y casillero asignado.</div>
+  </div>
+  <div class="califica-section">
+    <img src="img/icono_bolsa_Mesa de trabajo 1.png" alt="Bolsa" />
+    <div style="font-weight:600;color:#105da8;margin-bottom:0.5rem;">¿Cómo fue tu experiencia?</div>
+    <div class="estrellas" id="estrellas">
+      <span class="estrella">★</span>
+      <span class="estrella">★</span>
+      <span class="estrella">★</span>
+      <span class="estrella">★</span>
+      <span class="estrella">★</span>
+    </div>
+  </div>
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="home_takeaway.html" class="nav-link active"><img src="img/icono_inicio.png" alt="Inicio" /><span>Inicio</span></a></li>
+      <li><a href="carrito.html" class="nav-link"><img src="img/icono_carrito.png" alt="Carrito" /><span>Carrito</span></a></li>
+      <li><a href="cupones.html" class="nav-link"><img src="img/icono_cupones.png" alt="Cupones" /><span>Cupones</span></a></li>
+      <li><a href="soporte.html" class="nav-link"><img src="img/icono_soporte.png" alt="Soporte" /><span>Soporte</span></a></li>
+    </ul>
+  </nav>
+  <script>
+    // Contador de minutos
+    let tiempo = 5 * 60;
+    const contador = document.getElementById('contador-takeaway');
+    function updateContador() {
+      const min = Math.floor(tiempo / 60);
+      const seg = tiempo % 60;
+      contador.textContent = `${min.toString().padStart(2,'0')}:${seg.toString().padStart(2,'0')}`;
+      if (tiempo > 0) {
+        tiempo--;
+        setTimeout(updateContador, 1000);
+      } else {
+        document.getElementById('notificacion-pedido').style.display = 'block';
+      }
+    }
+    updateContador();
+    // Estrellas de calificación
+    const estrellas = document.querySelectorAll('.estrella');
+    estrellas.forEach((estrella, idx) => {
+      estrella.addEventListener('click', () => {
+        estrellas.forEach((e, i) => {
+          e.classList.toggle('selected', i <= idx);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

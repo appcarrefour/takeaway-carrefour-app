@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Locker y Código - Carrefour Take Away</title>
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background: #f6f8fa;
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .logo-carrefour {
+      margin-top: 2.2rem;
+      margin-bottom: 0.7rem;
+      width: 80px;
+      height: auto;
+      display: block;
+    }
+    .logo-takeaway {
+      width: 70px;
+      height: auto;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+    .locker-main {
+      width: 92vw;
+      max-width: 410px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,33,87,0.10);
+      padding: 2rem 1rem 2.5rem 1rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .codigo-casillero-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .codigo-box, .casillero-box {
+      background: #f0f4fa;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,33,87,0.06);
+      padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 120px;
+    }
+    .codigo-icon {
+      font-size: 2.2rem;
+      color: #0074d9;
+      margin-bottom: 0.7rem;
+    }
+    .casillero-icon {
+      font-size: 2.2rem;
+      color: #009e49;
+      margin-bottom: 0.7rem;
+    }
+    .codigo-value {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #002157;
+      margin: 0.7rem 0 0.2rem 0;
+      letter-spacing: 2px;
+    }
+    .casillero-numero {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #002157;
+      margin: 0.7rem 0 0.2rem 0;
+    }
+    .btn-ver-codigo {
+      background: #002157;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 0.7rem 1.5rem;
+      font-size: 1.08rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      margin-bottom: 0.2rem;
+      box-shadow: 0 2px 8px rgba(0,33,87,0.10);
+      transition: background 0.2s;
+    }
+    .btn-ver-codigo:hover {
+      background: #003399;
+    }
+    .temporizador {
+      margin: 1.5rem 0 0.5rem 0;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #0074d9;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+    }
+    .temporizador-label {
+      font-size: 1rem;
+      color: #002157;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    @media (max-width: 430px) {
+      .locker-main {
+        width: 98vw;
+        max-width: 98vw;
+        padding: 1.1rem 0.3rem 1.5rem 0.3rem;
+      }
+      .logo-carrefour {
+        width: 60px;
+        margin-top: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      .logo-takeaway {
+        width: 48px;
+        margin-bottom: 0.7rem;
+      }
+      .codigo-box, .casillero-box {
+        min-width: 90px;
+        padding: 0.7rem 0.7rem 0.7rem 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="img/logo_mesa de trabajo 1.png" alt="Carrefour Logo" class="logo-carrefour" />
+  <img src="img/takeaway-btn.png" alt="Take Away Logo" class="logo-takeaway" />
+  <div class="locker-main">
+    <div class="codigo-casillero-row">
+      <div class="codigo-box">
+        <span class="codigo-icon"><i class="fa-solid fa-key"></i></span>
+        <button class="btn-ver-codigo" id="btn-ver-codigo">Ver código</button>
+        <div class="codigo-value" id="codigo-value" style="display:none;"></div>
+      </div>
+      <div class="casillero-box">
+        <span class="casillero-icon"><i class="fa-solid fa-cube"></i></span>
+        <div class="casillero-numero" id="casillero-numero">#<span id="casillero-num">--</span></div>
+        <img src="img/casillero.png" alt="Casillero" style="width:40px;margin-top:0.5rem;" />
+      </div>
+    </div>
+    <div class="temporizador-label">Tiempo para retirar tu compra</div>
+    <div class="temporizador" id="temporizador">45:00</div>
+    <audio id="alarma-audio" src="https://cdn.pixabay.com/audio/2022/07/26/audio_124bfae5b2.mp3"></audio>
+  </div>
+  <script>
+    // Generar código único y casillero
+    function generarCodigo() {
+      return Math.random().toString(36).substr(2, 6).toUpperCase();
+    }
+    function generarCasillero() {
+      return Math.floor(Math.random() * 20) + 1;
+    }
+    let codigo = '';
+    let casillero = '';
+    document.getElementById('btn-ver-codigo').onclick = function() {
+      if (!codigo) codigo = generarCodigo();
+      if (!casillero) casillero = generarCasillero();
+      document.getElementById('codigo-value').textContent = codigo;
+      document.getElementById('codigo-value').style.display = 'block';
+      document.getElementById('casillero-num').textContent = casillero;
+    };
+    // Temporizador 45 minutos
+    let tiempo = 45 * 60;
+    let temporizador = document.getElementById('temporizador');
+    let alarma = document.getElementById('alarma-audio');
+    function updateTimer() {
+      let min = Math.floor(tiempo / 60);
+      let seg = tiempo % 60;
+      temporizador.textContent = `${min.toString().padStart(2,'0')}:${seg.toString().padStart(2,'0')}`;
+      if (tiempo > 0) {
+        tiempo--;
+      } else {
+        alarma.play();
+        clearInterval(timerInterval);
+      }
+    }
+    updateTimer();
+    let timerInterval = setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Pago Realizado</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f6f8fa;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Roboto', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      width: 110px;
+      margin: 2.5rem auto 0.7rem auto;
+      display: block;
+    }
+    .logo-take {
+      width: 160px;
+      margin: 0 auto 1.2rem auto;
+      display: block;
+    }
+    .container {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(16,93,168,0.08);
+      padding: 2.2rem 1.5rem 2.5rem 1.5rem;
+      max-width: 370px;
+      width: 92vw;
+      margin: 2.5rem auto 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main-title {
+      color: #105da8;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      margin-top: 0;
+    }
+    .icono-reloj {
+      width: 80px;
+      margin: 1.2rem auto 1.2rem auto;
+      display: block;
+    }
+    .subtitle {
+      color: #222;
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      margin-top: 0.2rem;
+    }
+    .codigo-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin: 1.5rem 0 1.2rem 0;
+    }
+    .codigo-btn {
+      background: #105da8;
+      color: #fff;
+      font-size: 1.08rem;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
+      text-decoration: none;
+      text-align: center;
+      border: none;
+      transition: background 0.2s;
+      cursor: pointer;
+      min-width: 120px;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .codigo-btn:hover {
+      background: #003399;
+    }
+    .codigo-reveal {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #105da8;
+      margin-left: 0.5rem;
+    }
+    .codigo-reveal img {
+      width: 32px;
+      height: 32px;
+    }
+    .casillero-section {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #105da8;
+      justify-content: center;
+    }
+    .casillero-section img {
+      width: 32px;
+      height: 32px;
+    }
+    .timer-section {
+      margin: 1.2rem 0 1.2rem 0;
+      font-size: 1.1rem;
+      color: #e53935;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      justify-content: center;
+    }
+    .main-btn {
+      background: #e6eaf3;
+      color: #105da8;
+      font-size: 1.08rem;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
+      text-decoration: none;
+      text-align: center;
+      border: none;
+      transition: background 0.2s;
+      cursor: pointer;
+      min-width: 120px;
+      margin-top: 2rem;
+    }
+    .main-btn:hover {
+      background: #c7d7ef;
+    }
+  </style>
+</head>
+<body>
+  <img src="img/logo.png" alt="Logo" class="logo" />
+  <img src="img/logo_take.png" alt="Logo Take Away" class="logo-take" />
+  <div class="container">
+    <div class="main-title">PAGO REALIZADO</div>
+    <img src="img/icono_reloj.png" alt="Reloj" class="icono-reloj" />
+    <div class="subtitle">Estamos preparando tu compra</div>
+    <div class="codigo-section">
+      <button class="codigo-btn" id="revelar-codigo"><img src="img/icono_numerico_Mesa de trabajo 1.png" alt="Numérico" />Ver código</button>
+      <span class="codigo-reveal" id="codigo-reveal"><img src="img/icono_numerico_Mesa de trabajo 1.png" alt="Numérico" /> <span id="codigo-num">-</span></span>
+    </div>
+    <div class="casillero-section">
+      <img src="img/casillero_1_Mesa de trabajo 1.png" alt="Casillero" />
+      Casillero asignado: <span id="casillero-num">1</span>
+    </div>
+    <div class="timer-section">
+      <img src="img/icono_reloj.png" alt="Reloj" style="width:24px;height:24px;" />
+      Tiempo para retirar: <span id="timer">45:00</span>
+    </div>
+    <a href="home_takeaway.html" class="main-btn">Volver a Home</a>
+  </div>
+  <script>
+    // Código aleatorio de 6 dígitos
+    const codigo = Math.floor(100000 + Math.random() * 900000);
+    document.getElementById('revelar-codigo').onclick = function() {
+      document.getElementById('codigo-reveal').style.display = 'inline-flex';
+      document.getElementById('codigo-num').textContent = codigo;
+      this.style.display = 'none';
+    };
+    // Timer 45 minutos
+    let tiempo = 45 * 60;
+    const timerEl = document.getElementById('timer');
+    function updateTimer() {
+      const min = Math.floor(tiempo / 60);
+      const seg = tiempo % 60;
+      timerEl.textContent = `${min.toString().padStart(2,'0')}:${seg.toString().padStart(2,'0')}`;
+      if (tiempo > 0) {
+        tiempo--;
+        setTimeout(updateTimer, 1000);
+      }
+    }
+    updateTimer();
+  </script>
+</body>
+</html>

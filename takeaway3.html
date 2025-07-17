@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Take Away - Paso 3</title>
+  <link rel="stylesheet" href="css/home.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #f6f8fa;
+      color: #222;
+      font-family: 'Roboto', Arial, sans-serif;
+      width: 100vw;
+      min-height: 100vh;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      width: 100vw;
+    }
+    .takeaway-logo {
+      margin-top: 2.2rem;
+      margin-bottom: 1.2rem;
+      width: 80px;
+      height: auto;
+      display: block;
+    }
+    .takeaway-main {
+      width: 92vw;
+      max-width: 410px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,33,87,0.10);
+      padding: 1.5rem 1rem 2rem 1rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .takeaway-main .step {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0074d9;
+      margin-bottom: 0.7rem;
+    }
+    .takeaway-main h1 {
+      font-size: 1.15rem;
+      margin-bottom: 1.1rem;
+      color: #002157;
+      line-height: 1.25;
+    }
+    .takeaway-main p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+      line-height: 1.3;
+    }
+    .btn-siguiente {
+      display: inline-block;
+      background: #002157;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 0.85rem 0;
+      width: 100%;
+      font-size: 1.08rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      margin-top: 0.7rem;
+      box-shadow: 0 2px 8px rgba(0,33,87,0.10);
+      transition: background 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-siguiente:hover {
+      background: #003399;
+      box-shadow: 0 4px 16px rgba(0,33,87,0.16);
+    }
+    @media (max-width: 430px) {
+      .takeaway-main {
+        width: 96vw;
+        max-width: 98vw;
+        padding: 1.1rem 0.3rem 1.5rem 0.3rem;
+      }
+      .takeaway-logo {
+        width: 60px;
+        margin-top: 1.2rem;
+        margin-bottom: 0.7rem;
+      }
+      .btn-siguiente {
+        font-size: 1rem;
+        padding: 0.8rem 0;
+      }
+      .takeaway-main h1 {
+        font-size: 1.05rem;
+      }
+      .takeaway-main p {
+        font-size: 0.97rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="img/logo.png" alt="Logo" class="takeaway-logo" />
+  <div class="takeaway-main">
+    <div class="step">3</div>
+    <h1>Encontrarás tus productos en el casillero que esté iluminado.<br>Retirá tu pedido</h1>
+    <p>¡Y no olvides cerrar la puerta!<br>Verificá cerrar la puerta del casillero, en caso contrario, sonará una alarma.</p>
+    <img src="img/elegi_3.png" alt="Elegí 3" style="width:120px;margin:1rem auto 0.5rem auto;display:block;" />
+    <a class="btn-siguiente" href="takeaway4.html">Siguiente</a>
+    <a class="btn-siguiente" href="takeaway2.html" style="background:#ccc;color:#002157;margin-top:0.5rem;">Volver</a>
+  </div>
+</body>
+</html>
